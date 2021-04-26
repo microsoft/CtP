@@ -1,0 +1,36 @@
+_base_ = './runtime_ucf101.py'
+data = dict(
+    train=dict(
+        data_source=dict(
+            type='TxtClsDataSource',
+            ann_file='hmdb51/annotations/train_split_1.txt',
+        ),
+        backend=dict(
+            type='ZipBackend',
+            zip_fmt='hmdb51/zips/{}.zip',
+            frame_fmt='img_{:05d}.jpg',
+        ),
+    ),
+    val=dict(
+        data_source=dict(
+            type='TxtClsDataSource',
+            ann_file='hmdb51/annotations/test_split_1.txt',
+        ),
+        backend=dict(
+            type='ZipBackend',
+            zip_fmt='hmdb51/zips/{}.zip',
+            frame_fmt='img_{:05d}.jpg',
+        ),
+    ),
+    test=dict(
+        data_source=dict(
+            type='TxtClsDataSource',
+            ann_file='hmdb51/annotations/test_split_1.txt',
+        ),
+        backend=dict(
+            type='ZipBackend',
+            zip_fmt='hmdb51/zips/{}.zip',
+            frame_fmt='img_{:05d}.jpg',
+        ),
+    )
+)
